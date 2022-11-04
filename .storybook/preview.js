@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import * as NextImage from 'next/image';
+import { themes } from '@storybook/theming';
 
 const BREAKPOINTS_INT = {
   xs: 375,
@@ -19,6 +20,7 @@ const customViewports = Object.fromEntries(
         styles: {
           width: `${val}px`,
           height: `${(idx + 5) * 10}vh`,
+          textColor: 'black',
         },
       },
     ];
@@ -42,4 +44,7 @@ export const parameters = {
     },
   },
   viewport: { viewports: customViewports },
+  docs: {
+    theme: themes.dark,
+  },
 };
